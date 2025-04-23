@@ -1,11 +1,14 @@
--- Create a table with a geometry column
+CREATE DATABASE spatial_dbs;
+
+USE spatial_dbs;
+
+
 CREATE TABLE `test` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `geom` GEOMETRY NULL,
   PRIMARY KEY (`id`)
 );
 
--- Insert a polygon with an outer ring and a hole (inner ring)
 INSERT INTO `test` (`geom`)
 VALUES (
   ST_GeomFromText(
@@ -13,10 +16,8 @@ VALUES (
   )
 );
 
--- View the geometry
 SELECT geom FROM test;
 
--- Insert another polygon without any holes
 INSERT INTO `test` (`geom`)
 VALUES (
   ST_GeomFromText(
@@ -25,20 +26,17 @@ VALUES (
   )
 );
 
--- Now create another table for lines (if not already created)
 CREATE TABLE `testw` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `geom` GEOMETRY NULL,
   PRIMARY KEY (`id`)
 );
 
--- Insert a multiline using a single line geometry
 INSERT INTO `testw` (`geom`)
 VALUES (
   ST_GeomFromText('MULTILINESTRING((0 0, 1 1, 2 2, 3 3, 4 4))')
 );
 
--- Insert a multiline with two lines
 INSERT INTO `testw` (`geom`)
 VALUES (
   ST_GeomFromText('MULTILINESTRING((12 12, 22 22), (19 19, 32 18))')

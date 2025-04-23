@@ -1,5 +1,5 @@
 import mysql.connector
-// check ur password
+# // check ur password
 mydb = mysql.connector.connect(host="localhost", user="root", password="Tsk@2003")
 mycursor = mydb.cursor()
 mycursor.execute("CREATE DATABASE IF NOT EXISTS vysya")
@@ -18,4 +18,3 @@ for x in myresult:
 mycursor.close()
 mydb.close()
 
-This is the correct code

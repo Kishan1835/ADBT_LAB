@@ -1,58 +1,54 @@
-1. CREATE DATABASE
+CREATE DATABASE my_database;
 
-   CREATE DATABASE my_database;
+USE my_database;
 
-2. USE DATABASE
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    email VARCHAR(100)
+);
 
-   USE my_database;
+INSERT INTO students (name, age, email)
+VALUES ('Kishan', 21, 'kishan@example.com');
 
-3. CREATE TABLE
+INSERT INTO students (name, age, email)
+VALUES 
+    ('Manoj', 20, 'manoj@example.com'),
+    ('Priya', 22, 'priya@example.com'),
+    ('Rahul', 23, 'rahul@example.com');
+    ('ram', 24, 'ram@example.com');
 
-   CREATE TABLE students (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       name VARCHAR(100),
-       age INT,
-       email VARCHAR(100)
-   );
 
-4. INSERT DATA
+SELECT * FROM students;
 
-   INSERT INTO students (name, age, email)
-   VALUES ('Kishan', 21, 'kishan@example.com');
+ALTER TABLE students ADD COLUMN grade VARCHAR(5);
 
-   INSERT INTO students (name, age, email)
-   VALUES 
-       ('Manoj', 20, 'manoj@example.com'),
-       ('Priya', 22, 'priya@example.com'),
-       ('Rahul', 23, 'rahul@example.com');
+ALTER TABLE students MODIFY age SMALLINT;
 
-5. ALTER TABLE
+ALTER TABLE students RENAME COLUMN grade TO class_grade;
 
-   ALTER TABLE students ADD COLUMN grade VARCHAR(5);
+DESCRIBE students;
 
-   ALTER TABLE students MODIFY age SMALLINT;
+UPDATE students
+SET age = 22
+WHERE name = 'Kishan';
 
-   ALTER TABLE students RENAME COLUMN grade TO class_grade;
+SELECT * FROM students;
 
-6. UPDATE DATA
+DELETE FROM students
+WHERE id = 1;
 
-   UPDATE students
-   SET age = 22
-   WHERE name = 'Kishan';
+SELECT * FROM students;
 
-7. DELETE RECORD
+ALTER TABLE students DROP COLUMN class_grade;
 
-   DELETE FROM students
-   WHERE id = 1;
+DESCRIBE students;
 
-8. DROP COLUMN
+DROP TABLE students;
 
-   ALTER TABLE students DROP COLUMN class_grade;
+DROP DATABASE my_database;
 
-9. DROP TABLE
+SHOW DATABASES;
 
-   DROP TABLE students;
-
-10. DROP DATABASE
-
-    DROP DATABASE my_database;
+SELECT DATABASE();

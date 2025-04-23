@@ -8,7 +8,9 @@ collection = db['collection_name']
 
 sample_data = [
     {"name": 'john doe', 'age': 25},
-    {"name": 'jame', 'age': 44}
+    {"name": 'jauume', 'age': 49},
+    {"name": 'ram', 'age': 48},
+
 ]
 
 collection.insert_many(sample_data)
