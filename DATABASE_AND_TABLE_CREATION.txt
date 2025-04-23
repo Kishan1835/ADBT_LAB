@@ -1,0 +1,58 @@
+1. CREATE DATABASE
+
+   CREATE DATABASE my_database;
+
+2. USE DATABASE
+
+   USE my_database;
+
+3. CREATE TABLE
+
+   CREATE TABLE students (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       name VARCHAR(100),
+       age INT,
+       email VARCHAR(100)
+   );
+
+4. INSERT DATA
+
+   INSERT INTO students (name, age, email)
+   VALUES ('Kishan', 21, 'kishan@example.com');
+
+   INSERT INTO students (name, age, email)
+   VALUES 
+       ('Manoj', 20, 'manoj@example.com'),
+       ('Priya', 22, 'priya@example.com'),
+       ('Rahul', 23, 'rahul@example.com');
+
+5. ALTER TABLE
+
+   ALTER TABLE students ADD COLUMN grade VARCHAR(5);
+
+   ALTER TABLE students MODIFY age SMALLINT;
+
+   ALTER TABLE students RENAME COLUMN grade TO class_grade;
+
+6. UPDATE DATA
+
+   UPDATE students
+   SET age = 22
+   WHERE name = 'Kishan';
+
+7. DELETE RECORD
+
+   DELETE FROM students
+   WHERE id = 1;
+
+8. DROP COLUMN
+
+   ALTER TABLE students DROP COLUMN class_grade;
+
+9. DROP TABLE
+
+   DROP TABLE students;
+
+10. DROP DATABASE
+
+    DROP DATABASE my_database;

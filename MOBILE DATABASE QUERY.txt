@@ -1,0 +1,19 @@
+from pymongo import MongoClient
+
+client = MongoClient('localhost', 27017)
+
+db = client['db_name']
+
+collection = db['collection_name']
+
+sample_data = [
+    {"name": 'john doe', 'age': 25},
+    {"name": 'jame', 'age': 44}
+]
+
+collection.insert_many(sample_data)
+
+records = collection.find()
+
+for record in records:
+    print(record)
